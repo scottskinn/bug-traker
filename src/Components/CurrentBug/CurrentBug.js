@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './CurrentBug.css'
 
 function CurrentBug() {
-    const [ CurrentBug, setCurrentBug ] = useState();
+    // const [ CurrentBug, setCurrentBug ] = useState();
   
     return (
       <div className="current-bug">

@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './AddBug.css'
 
 function AddBug() {
-    const [ addBug, setAddBug ] = useState(true);
+    // const [ addBug, setAddBug ] = useState(true);
   
     return (
       <div className="Add-bug">
