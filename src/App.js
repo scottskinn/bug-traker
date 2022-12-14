@@ -7,17 +7,32 @@ import './App.css'
 function App() {
   const [ addBug, setAddBug ] = useState(true);
 
+  function currentBugScreen() {
+    setAddBug(false);
+  }
+
+  function addBugScreen() {
+    setAddBug(true);
+  }
+
   return (
     <div className="App">
       <h1>Bug Tracker</h1>
+
       <div className='card-container'>
         { addBug ? <AddBug /> : <CurrentBug />}
-      {/* <CurrentBug /> */}
       </div>
-      {/* <AddBug /> */}
+
       <div className='view-pages'>
-        <button className='current-bug-button'>Current Bug</button>
-        <button className='current-bug-button add-bug-button'>Add Bug</button>
+        <button className='current-bug-button' 
+        onClick={() => currentBugScreen()}>
+          Current Bug
+        </button>
+
+        <button className='current-bug-button add-bug-button'
+        onClick={() => addBugScreen()}>
+          Add Bug
+        </button>
       </div>
     </div>
   );
