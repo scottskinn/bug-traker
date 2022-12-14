@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import AddBug from './Components/AddBug/AddBug';
+import CurrentBug from './Components/CurrentBug/CurrentBug';
+
+import './App.css'
 
 function App() {
+  const [ addBug, setAddBug ] = useState(true);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Bug Tracker</h1>
+      <div className='card-container'>
+        { addBug ? <AddBug /> : <CurrentBug />}
+      {/* <CurrentBug /> */}
+      </div>
+      {/* <AddBug /> */}
+      <div className='view-pages'>
+        <button className='current-bug-button'>Current Bug</button>
+        <button className='current-bug-button add-bug-button'>Add Bug</button>
+      </div>
     </div>
   );
 }
