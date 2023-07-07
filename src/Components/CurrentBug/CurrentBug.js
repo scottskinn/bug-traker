@@ -1,58 +1,32 @@
 import React from 'react';
-import './CurrentBug.css'
+import './CurrentBug.css';
 
 function CurrentBug() {
-    // const [ CurrentBug, setCurrentBug ] = useState();
-  
-    return (
-      <div className="current-bug">
-        <div className='current-bug-form'>
-            <p className='close-bug'>Close Bug</p>
+  const bugs = JSON.parse(localStorage.getItem('bugs')) || [];
+
+  return (
+    <div className="current-bug">
+      <div className="current-bug-form">
+        <p className="close-bug">Close Bug</p>
+        {bugs.map((bug, index) => (
+          <React.Fragment key={index}>
             <p>
-                Assigned <span>Username</span>
+              Assigned <span>{bug.dev}</span>
             </p>
             <p>
-                Priority <span>High</span>
+              Priority <span>{bug.priority}</span>
             </p>
             <p>Description</p>
-            <p className='description-text'>
-                If you've previously installed create-react-app globally via npm install -g create-react-app, we recommend you uninstall the package using npm uninstall -g create-react-app or yarn global remove create-react-app to ensure that npx always uses the latest version.
-            </p>
+            <p className="description-text">{bug.decs}</p>
             <hr />
-            <div className='current-bug-form'>
-            <p className='close-bug'>Close Bug</p>
-            <p>
-                Assigned <span>Username</span>
-            </p>
-            <p>
-                Priority <span>High</span>
-            </p>
-            <p>Description</p>
-            <p className='description-text'>
-                If you've previously installed create-react-app globally via npm install -g create-react-app, we recommend you uninstall the package using npm uninstall -g create-react-app or yarn global remove create-react-app to ensure that npx always uses the latest version.
-            </p>
-            <hr />
-        </div>
-        <div className='current-bug-form'>
-            <p className='close-bug'>Close Bug</p>
-            <p>
-                Assigned <span>Username</span>
-            </p>
-            <p>
-                Priority <span>High</span>
-            </p>
-            <p>Description</p>
-            <p className='description-text'>
-                If you've previously installed create-react-app globally via npm install -g create-react-app, we recommend you uninstall the package using npm uninstall -g create-react-app or yarn global remove create-react-app to ensure that npx always uses the latest version.
-            </p>
-            <hr />
-            <div class="scrollbar" id="style-8">
-                <div class="force-overflow"></div>
-            </div>
-        </div>
+          </React.Fragment>
+        ))}
+        <div className="scrollbar" id="style-8">
+          <div className="force-overflow"></div>
         </div>
       </div>
-    );
-  }
-  
-  export default CurrentBug;
+    </div>
+  );
+}
+
+export default CurrentBug;

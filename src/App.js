@@ -2,38 +2,44 @@ import React, { useState } from 'react';
 import AddBug from './Components/AddBug/AddBug';
 import CurrentBug from './Components/CurrentBug/CurrentBug';
 
-import './App.css'
+import './App.css';
 
 function App() {
-  const [ addBug, setAddBug ] = useState(true);
+  const [activePage, setActivePage] = useState('addBug');
 
-  function currentBugScreen() {
-    setAddBug(false);
-  }
-
-  function addBugScreen() {
-    setAddBug(true);
-  }
+  const handlePageChange = (page) => {
+    setActivePage(page);
+  };
 
   return (
     <div className="App">
       <h1>Bug Tracker</h1>
 
-      <div className='card-container'>
-        { addBug ? <AddBug /> : <CurrentBug />}
+      <div className="card-container">
+        {activePage === 'addBug' ? <AddBug /> : <CurrentBug />}
       </div>
 
-      <div className='view-pages'>
-        <button className='current-bug-button' 
-        onClick={() => currentBugScreen()}>
-          Current Bug
-        </button>
+      {activePage === 'addBug' && (
+        <div className="view-pages">
+          <button
+            className="current-bug-button add-bug-button active"
+            onClick={() => handlePageChange('currentBug')}
+          >
+            Current Bugs
+          </button>
+        </div>
+      )}
 
-        <button className='current-bug-button add-bug-button'
-        onClick={() => addBugScreen()}>
-          Add Bug
-        </button>
-      </div>
+      {activePage === 'currentBug' && (
+        <div className="view-pages">
+          <button
+            className="current-bug-button"
+            onClick={() => handlePageChange('addBug')}
+          >
+            Add Bug
+          </button>
+        </div>
+      )}
     </div>
   );
 }
