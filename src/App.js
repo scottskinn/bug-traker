@@ -22,7 +22,7 @@ function App() {
       {activePage === 'addBug' && (
         <div className="view-pages">
           <button
-            className="current-bug-button add-bug-button active"
+            className="btn add-bug-button active"
             onClick={() => handlePageChange('currentBug')}
           >
             Current Bugs
@@ -33,7 +33,7 @@ function App() {
       {activePage === 'currentBug' && (
         <div className="view-pages">
           <button
-            className="current-bug-button"
+            className="btn current-bug-button"
             onClick={() => handlePageChange('addBug')}
           >
             Add Bug

@@ -1,39 +1,43 @@
 form {
     text-align: left;
-}
-
-form label,
-label input,
-label select {
+  }
+  
+  form label,
+  label input,
+  label select {
     display: block;
-}
-
-label input,
-label select {
+  }
+  
+  label input,
+  label select {
+    box-sizing: border-box; 
     width: 100%;
     padding: 12px;
     margin-top: 8px;
     margin-bottom: 10px;
-}
-
-label select .select-arrow-active:after {
+    resize: vertical;
+  }
+  
+  label select .select-arrow-active:after {
     border-color: transparent transparent #fff transparent;
     top: 7px;
-}
-
-form button {
+  }
+  
+  form button {
     border-radius: 5px;
     background: green;
     color: white;
     border: none;
     padding: 12px 28px;
     margin-top: 20px;
-    
-    -webkit-box-shadow: 9px 10px 30px 0px rgba(0,0,0,0.75);
-    -moz-box-shadow: 9px 10px 30px 0px rgba(0,0,0,0.75);
-    box-shadow: 9px 10px 30px 0px rgba(0,0,0,0.75);
-}
-
-.add-bug {
-    
-}
+    -webkit-box-shadow: 9px 10px 30px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 9px 10px 30px 0px rgba(0, 0, 0, 0.75);
+    box-shadow: 9px 10px 30px 0px rgba(0, 0, 0, 0.75);
+  }
+  
+  .Add-bug {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
