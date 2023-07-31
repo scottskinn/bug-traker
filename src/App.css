@@ -47,26 +47,22 @@ h3 {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.current-bug-button {
+.current-bug-button, .add-bug-button {
   color: green;
-  background: white;
+  background: #e5e1e1;
   margin-right: 10px;
-}
-
-.add-bug-button {
-  background: #c3c361;
-  color: white;
-  margin-left: 10px;
 }
 
 .current-bug-button.active {
   /* Apply styling for the active button */
   background-color: #0d93e1;
   color: white;
+  border: 2px green solid;
 }
 
 .add-bug-button.active {
   /* Apply styling for the active button */
-  background-color: #c3c361;
+  background-color: #0d93e1;
   color: white;
+  border: 2px green solid;
 }

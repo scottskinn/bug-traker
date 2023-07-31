@@ -15,11 +15,6 @@ function App() {
     <div className="App">
       <h1>Bug Tracker</h1>
 
-      <div className="card-container">
-        {activePage === 'addBug' && <AddBug />}
-        {activePage === 'currentBug' && <CurrentBug />}
-      </div>
-
       <div className="view-pages">
         <button
           className={`btn add-bug-button ${
@@ -38,6 +33,11 @@ function App() {
         >
           Current Bugs
         </button>
+      </div>
+
+      <div className="card-container">
+        {activePage === 'addBug' && <AddBug />}
+        {activePage === 'currentBug' && <CurrentBug />}
       </div>
     </div>
   );
