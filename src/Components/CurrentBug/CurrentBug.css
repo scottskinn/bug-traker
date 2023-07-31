@@ -5,6 +5,13 @@
     padding-right: 30px;
 }
 
+.close-bug {
+    display: flex;
+    position: absolute;
+    right: 0;
+    background-color: darkorange;
+}
+
 .current-bug  p{
     text-align: left;
 }
@@ -21,7 +28,7 @@
     position: relative;
 }
 
-.current-bug-form .close-bug {
+.current-bug-form {
     position: absolute;
     top: 0;
     right: 0;

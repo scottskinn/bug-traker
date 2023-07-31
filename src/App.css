@@ -15,6 +15,12 @@ h1 {
   margin-bottom: 30px;
 }
 
+h3 {
+  display: flex;
+  align-items: left;
+  padding: 2px 5px;
+}
+
 .card-container {
   background: #f6f6f6;
   max-width: 750px;
@@ -35,6 +41,7 @@ h1 {
   border-radius: 5px;
   cursor: pointer;
   border: none;
+  margin: 1rem;
   padding: 12px 28px;
   font-weight: bold;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -50,4 +57,16 @@ h1 {
   background: #c3c361;
   color: white;
   margin-left: 10px;
+}
+
+.current-bug-button.active {
+  /* Apply styling for the active button */
+  background-color: #0d93e1;
+  color: white;
+}
+
+.add-bug-button.active {
+  /* Apply styling for the active button */
+  background-color: #c3c361;
+  color: white;
 }

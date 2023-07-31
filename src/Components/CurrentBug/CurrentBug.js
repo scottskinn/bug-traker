@@ -4,21 +4,34 @@ import './CurrentBug.css';
 function CurrentBug() {
   const bugs = JSON.parse(localStorage.getItem('bugs')) || [];
 
+  const handleBugClose = (index) => {
+    const confirmation = window.confirm('Are you sure you want to close this bug?');
+    if (confirmation) {
+      const updatedBugs = bugs.filter((_, i) => i !== index); // Remove the bug at the given index
+      localStorage.setItem('bugs', JSON.stringify(updatedBugs));
+      window.location.reload(); // Refresh the page to reflect the changes
+    }
+  };
+
   return (
     <div className="current-bug">
       <div className="current-bug-form">
-        <p className="close-bug">Close Bug</p>
         {bugs.map((bug, index) => (
           <React.Fragment key={index}>
-            <p>
-              Assigned <span>{bug.dev}</span>
-            </p>
-            <p>
-              Priority <span>{bug.priority}</span>
-            </p>
-            <p>Description</p>
-            <p className="description-text">{bug.decs}</p>
-            <hr />
+            <>
+              <button className="btn close-bug" onClick={() => handleBugClose(index)}>
+                Close Bug
+              </button>
+              <h3>
+                Assigned: <span>{bug.dev}</span>
+              </h3>
+              <h3>
+                Priority: <span>{bug.priority}</span>
+              </h3>
+              <h3>Description:</h3>
+              <p className="description-text">{bug.decs}</p>
+              <hr />
+            </>
           </React.Fragment>
         ))}
         <div className="scrollbar" id="style-8">
