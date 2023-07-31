@@ -1,15 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AddBug from './Components/AddBug/AddBug';
 import CurrentBug from './Components/CurrentBug/CurrentBug';
 
 import './App.css';
 
 function App() {
-  const [activePage, setActivePage] = useState('addBug');
+  const storedActivePage = localStorage.getItem('activePage');
+  const [activePage, setActivePage] = useState(storedActivePage || 'addBug');
 
   const handlePageChange = (page) => {
     setActivePage(page);
+    localStorage.setItem('activePage', page);
   };
+
+  useEffect(() => {
+    localStorage.setItem('activePage', activePage);
+  }, [activePage]);
 
   return (
     <div className="App">

@@ -20,6 +20,7 @@ function AddBug() {
   const handleSubmit = (e) => {
     e.preventDefault();
     addToLocalStorage();
+    window.location.reload();
   };
 
   return (
