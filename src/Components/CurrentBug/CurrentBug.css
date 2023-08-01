@@ -16,7 +16,9 @@
     text-align: left;
 }
 
-.current-bug p span {
+.current-bug span {
+    display: flex;
+    align-items: left;
     color: #666161;
 }
 

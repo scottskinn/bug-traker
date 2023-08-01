@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { BugContext } from '../BugContext';
+
 import './AddBug.css';
 
 function AddBug() {
@@ -6,21 +8,19 @@ function AddBug() {
   const [dev, setDev] = useState('');
   const [priority, setPriority] = useState('');
 
-  const addToLocalStorage = () => {
-    const existingBugs = JSON.parse(localStorage.getItem('bugs')) || [];
+  const { addBug } = useContext(BugContext);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
     const newBug = {
       decs: decs,
       dev: dev,
       priority: priority
     };
-    const updatedBugs = [...existingBugs, newBug];
-    localStorage.setItem('bugs', JSON.stringify(updatedBugs));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    addToLocalStorage();
-    window.location.reload();
+    addBug(newBug);
+    setDecs('');
+    setDev('');
+    setPriority('');
   };
 
   return (
